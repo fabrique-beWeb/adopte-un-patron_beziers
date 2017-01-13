@@ -1,0 +1,72 @@
+/* line 1, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+h2 {
+	text-align: center;
+}
+
+
+/* line 4, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+.center {
+	text-align: center;
+}
+
+
+/* line 7, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+.logos {
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+
+
+/* line 15, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+.col-sm-6 {
+	height: 8em;
+}
+
+
+/* line 18, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+.big-col {
+	height: 16em;
+}
+
+
+/* line 21, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+footer {
+	margin-top: 2em;
+}
+
+
+/* line 24, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+footer .navbar {
+	color: #778899;
+}
+
+
+/* line 27, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+header .navbar {
+	color: #778899;
+}
+
+
+/* line 30, /opt/lampp/htdocs/adopte_un_patron2/theme/css/main.sass */
+
+.bandeau {
+	background-color: #eee;
+	margin: 1em 0;
+	padding: 1em 0;
+	width: 100%;
+}
+
+
+/*# sourceMappingURL=main.css.map */
