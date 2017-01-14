@@ -15,9 +15,9 @@
 
 ## Changelog
 * **13/01/2016**
-    Mise en place du projet avec ZF 2.5.1
-    Création de la structure et des modules principaux
-    Conception du layout avec bootstrap
+    * Mise en place du projet avec ZF 2.5.1
+    * Création de la structure et des modules principaux
+    * Conception du layout avec bootstrap
 
 ## Branches
 * **Master** Branche principale, fonctionelle
