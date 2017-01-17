@@ -73,7 +73,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Candidat\Controller\Index' => 'Candidat\Controller\IndexController'
+            'Candidat\Controller\Index' => 'Candidat\Controller\IndexController',
+            'Candidat\Controller\Login' => 'Candidat\Controller\LoginController'
         ),
     ),
     'view_manager' => array(
@@ -85,6 +86,9 @@ return array(
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'candidat/index/index' => __DIR__ . '/../view/candidat/index/index.phtml',
+            'candidat/login/index' => __DIR__ . '/../view/candidat/login/index.phtml',
+            'candidat/login/login' => __DIR__ . '/../view/candidat/login/login.phtml',
+            'candidat/login/logout' => __DIR__ . '/../view/candidat/login/logout.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

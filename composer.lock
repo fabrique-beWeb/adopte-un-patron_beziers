@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "901ba4c5843150ed0574aba5b7371b72",
-    "content-hash": "1984ebc75e486d1676ebdb4acd60d84c",
+    "hash": "584cc0258c3ec69f3bcc163bf7f35f36",
+    "content-hash": "acafc24baf18ef08f6db631cb88ffd02",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -3752,16 +3752,16 @@
         },
         {
             "name": "zendframework/zend-session",
-            "version": "2.7.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-session.git",
-                "reference": "346e9709657b81a5d53d70ce754730a26d1f02f2"
+                "reference": "db77b8b4643066c39922c77271e68539c2270df1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-session/zipball/346e9709657b81a5d53d70ce754730a26d1f02f2",
-                "reference": "346e9709657b81a5d53d70ce754730a26d1f02f2",
+                "url": "https://api.github.com/repos/zendframework/zend-session/zipball/db77b8b4643066c39922c77271e68539c2270df1",
+                "reference": "db77b8b4643066c39922c77271e68539c2270df1",
                 "shasum": ""
             },
             "require": {
@@ -3814,7 +3814,7 @@
                 "session",
                 "zf2"
             ],
-            "time": "2016-07-05 18:32:50"
+            "time": "2016-07-05 18:33:54"
         },
         {
             "name": "zendframework/zend-soap",
@@ -4537,7 +4537,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "zendframework/zend-session": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
