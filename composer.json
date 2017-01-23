@@ -10,7 +10,10 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "^2.5",
-        "zendframework/zend-session": "dev-master"
+        "zendframework/zend-session": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zendframework/zend-form": "dev-master",
+        "doctrine/doctrine-orm-module": "0.8.*"
     } 
     
 }

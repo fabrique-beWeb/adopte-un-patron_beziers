@@ -2,12 +2,12 @@
 /**
  * Zend Framework (http://framework.zend.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
+ * @link      http://github.com/zendframework/ZendSkeletonUtilisateur for the canonical source repository
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
-namespace Application;
- 
+namespace Utilisateur;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -16,7 +16,17 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Utilisateur\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'login' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/utilisateur/login',
+                    'defaults' => array(
+                        'controller' => 'Utilisateur\Controller\Login',
                         'action'     => 'index',
                     ),
                 ),
@@ -24,13 +34,13 @@ return array(
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
+            // using the path /utilisateur/:controller/:action
+            'utilisateur' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/application',
+                    'route'    => '/utilisateur',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
+                        '__NAMESPACE__' => 'Utilisateur\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
@@ -74,8 +84,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Application\Controller\Pages' => 'Application\Controller\PagesController',
+            'Utilisateur\Controller\Index' => 'Utilisateur\Controller\IndexController',
+            'Utilisateur\Controller\Login' => 'Utilisateur\Controller\LoginController',
+            'Utilisateur\Controller\Register' => 'Utilisateur\Controller\RegisterController',
         ),
     ),
     'view_manager' => array(
@@ -86,8 +97,14 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            'application/pages/index' => __DIR__ . '/../view/application/pages/index.phtml',
+            'utilisateur/index/index' => __DIR__ . '/../view/utilisateur/index/index.phtml',
+            
+            'utilisateur/login/index' => __DIR__ . '/../view/utilisateur/login/index.phtml',
+            'utilisateur/login/login' => __DIR__ . '/../view/utilisateur/login/login.phtml',
+            'utilisateur/login/logout' => __DIR__ . '/../view/utilisateur/login/logout.phtml',
+            
+            'utilisateur/register/index' => __DIR__ . '/../view/utilisateur/register/index.phtml',
+            
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
@@ -102,7 +119,7 @@ return array(
             ),
         ),
     ),
-      'doctrine' => array(
+    'doctrine' => array(
         'driver' => array(
             __NAMESPACE__ . '_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',

@@ -11,10 +11,10 @@
 
 	<!-- Le styles -->
 	<?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-                    ->prependStylesheet($this->basePath() . '/css/main.css')
-					->prependStylesheet($this->basePath() . '/css/font-awesome.min.css')
-					->prependStylesheet($this->basePath() . '/css/bootflat.min.css')
-					->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+                    //->prependStylesheet($this->basePath() . '/css/style.css')
+                    //->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                    ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                    ->prependStylesheet($this->basePath() . '/css/main.css')?>
 
 	<!-- Scripts -->
 	<?php echo $this->headScript()
@@ -27,26 +27,23 @@
 
 <body>
 	<header>
-		<nav class="navbar navbar-inverse navbarmain">
+		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a href="/"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> AdopteUnPatron</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>AdoptUnBoss</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 				</ul>
-				<!--
-				<form class="navbar-form navbar-left inline-form">
-					<div class="form-group">
-						<input type="search" class="input-sm form-control" placeholder="Rechercher une offre">
-						<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-					</div>
-				</form>
-				-->
+
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active">
 						<li><a href="#">Nos Offres</a></li>
 						<li><a href="#">Comment ça marche ?</a></li>
 						<li><a href="#">Evènements</a></li>
-						<li><a href="/utilisateur/login/index">Connexion</a></li>
-						<li><a href="/utilisateur/register/index">Inscription</a></li>
+						<li><a href="#">Connection</a></li>
+						<li><a href="#">Vous êtes recruteur ?</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -58,7 +55,9 @@
 	</main>
     
 	<footer>
-		<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Adopte ta mère &copy; 2017
+		<nav class="navbar navbar-inverse navbar-fixed-bottom center">
+			<span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> AdoptUnBoss
+		</nav>
 	</footer>
 	<?php echo $this->inlineScript() ?>
 </body>

@@ -6,6 +6,10 @@ h2 {
 	text-align: center;
 }
 
+.right {
+	text-align: right;
+}
+
 .logos {
 	width: 100%;
 	display: flex;
