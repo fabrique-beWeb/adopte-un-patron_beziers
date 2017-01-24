@@ -2,41 +2,46 @@
     <div class="row">
         <div class="col-sm-4">
         </div>
-        
+
         <div class="col-sm-8">
             <h1 class="center">Connexion</h1>
             <br>
-            <form method="post" action="/utilisateur/login/login">
+            <?php
+                $form->setAttribute('action', $this->url('login', array('action' => 'login')));
+                $form->prepare();
+                echo $this->form()->openTag($form);
+            ?>
                 <!-- email -->
                 <div class="row">
                     <div class="col-sm-3">
-                        <label for="email">Adresse e-mail</label>
+                        <?php echo $this->formLabel($form->get('email')); ?>
                     </div>
                     <div class="col-sm-9">
-                        <input class="form-control" placeholder="vous@domaine.com" type="email" name="email">
+                        <?php echo $this->formElement($form->get('email')); ?>
                     </div>
                 </div>
                 <br>
                 <!-- password -->
                 <div class="row">
                     <div class="col-sm-3">
-                        <label for="password">Mot de passe</label>
+                        <?php echo $this->formLabel($form->get('password')); ?>
                     </div>
                     <div class="col-sm-9">
-                        <input class="form-control" type="password" name="password">
+                        <?php echo $this->formElement($form->get('password')); ?>
                     </div>
                 </div>
                 <br>
-                <input type="checkbox"> <label>Se souvenir de moi</label>
+                <?php echo $this->formElement($form->get('remember')); ?>
+                <?php echo $this->formLabel($form->get('remember')); ?>
                 <br>
                 <div class="center">
-                    <button class="btn btn-primary" type="submit">Connexion</button>
+                <?php  echo $this->formSubmit($form->get('submit')); ?>
                 </div>
-            </form>
+            <?php  echo $this->form()->closeTag(); ?>
             <br><br>
             <div class="row">
                 <div class="col-sm-1"></div>
-    
+
                 <div class="col-sm-2">
                     <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
                 </div>
@@ -58,7 +63,7 @@
             <div class="center">
                 Pas encore inscrit ? <a href="/utilisateur/register/index">S'inscrire</a>
             </div>
-            
+
 
 
         </div>
