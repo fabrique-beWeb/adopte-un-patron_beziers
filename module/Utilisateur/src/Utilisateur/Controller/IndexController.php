@@ -12,12 +12,22 @@ namespace Utilisateur\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+use Zend\Session\Container;
+
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return $this->redirect()->toRoute('login');
+        $session = new Container('base');
+        $email = '';
+        
+        $session->offsetSet('email', 'corin.alex@gmail.com');
+        
+        if ($session->offsetExists('email')) {
+            $email = $session->offsetGet('email');
+        }
+        //return $this->redirect()->toRoute('login');
 
-        return new ViewModel();
+        return new ViewModel(array('email' => $email));
     }
 }

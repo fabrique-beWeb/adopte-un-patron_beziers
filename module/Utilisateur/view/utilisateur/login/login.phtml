@@ -1,7 +1,11 @@
-<?php if (!empty($user)) { ?>
-
-<h1>Vous êtes connectés</h1>
-<h2>Bienvenue <?php echo $user->getPrenom(); ?> </h2>
-Redirection...
-
-<?php } ?>
+<div class="container">
+    <?php
+    if ($session->offsetExists('id') and !empty($session->offsetGet('id'))) {
+    ?>
+    
+    <h1>Vous êtes connectés</h1>
+    <h4>Bienvenue <?php echo $session->offsetGet('email'); ?> </h4>
+    Redirection...
+    
+    <?php } ?>
+</div>
