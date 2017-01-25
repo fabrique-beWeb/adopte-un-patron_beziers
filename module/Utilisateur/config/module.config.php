@@ -87,6 +87,7 @@ return array(
             'Utilisateur\Controller\Index' => 'Utilisateur\Controller\IndexController',
             'Utilisateur\Controller\Login' => 'Utilisateur\Controller\LoginController',
             'Utilisateur\Controller\Register' => 'Utilisateur\Controller\RegisterController',
+            'Utilisateur\Controller\Profile' => 'Utilisateur\Controller\ProfileController',
         ),
     ),
     'view_manager' => array(
@@ -104,6 +105,8 @@ return array(
             'utilisateur/login/logout' => __DIR__ . '/../view/utilisateur/login/logout.phtml',
             
             'utilisateur/register/index' => __DIR__ . '/../view/utilisateur/register/index.phtml',
+            
+            'utilisateur/profile/index' => __DIR__ . '/../view/utilisateur/profile/index.phtml',
             
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
