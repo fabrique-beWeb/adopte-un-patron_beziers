@@ -13,7 +13,7 @@ namespace Utilisateur\Model;
      public $password;
      public $remember;
 
-     protected $inputFilter;                       // <-- Add this variable
+     protected $inputFilter;
 
      public function exchangeArray($data)
      {
@@ -64,7 +64,7 @@ namespace Utilisateur\Model;
                          'name'    => 'StringLength',
                          'options' => array(
                              'encoding' => 'UTF-8',
-                             'min'      => 8,
+                             'min'      => 6,
                              'max'      => 50,
                          ),
                      ),
@@ -73,11 +73,10 @@ namespace Utilisateur\Model;
 
              $inputFilter->add(array(
                  'name'     => 'remember',
-                 'required' => true,
+                 'required' => false,
                  'filters'  => array(
                      array('name' => 'Int'),
                  ),
-                ),
              ));
 
              $this->inputFilter = $inputFilter;

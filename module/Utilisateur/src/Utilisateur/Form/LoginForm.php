@@ -15,9 +15,11 @@ class LoginForm extends Form
             'type' => 'text',
             'options' => array(
                 'label' => 'Identifiant',
+                
             ),
             'attributes' => array(
-                'class' => 'form-control'
+                'class' => 'form-control',
+                'placeholder' => 'vous@exemple.com',
             ),
         ));
 

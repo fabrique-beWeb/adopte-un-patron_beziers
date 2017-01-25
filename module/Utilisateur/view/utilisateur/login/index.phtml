@@ -1,3 +1,19 @@
+<?php
+    if ($session->offsetExists('id') and !empty($session->offsetGet('id'))) {
+    ?>
+    
+    <h1>Vous êtes connectés</h1>
+    <h4>Bienvenue
+    <?php
+    if ($session->offsetExists('email') and !empty($session->offsetGet('email'))) {
+        echo $session->offsetGet('email'); 
+    }
+    ?>
+    </h4>
+    Redirection...
+    
+    <?php } else { ?>
+
 <section class="container">
     <div class="row">
         <div class="col-sm-4">
@@ -63,9 +79,7 @@
             <div class="center">
                 Pas encore inscrit ? <a href="/utilisateur/register/index">S'inscrire</a>
             </div>
-
-
-
         </div>
     </div>
 </section>
+<?php } ?>

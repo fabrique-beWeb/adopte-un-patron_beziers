@@ -24,50 +24,33 @@ class LoginController extends AbstractActionController
     {
         $form = new LoginForm();
         $form->get('submit')->setValue('Connexion');
-
+        $session = new Container('user');
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $nom = new Login();
-            $form->setInputFilter($nom->getInputFilter());
+            $loginInfo = new Login();
+            $form->setInputFilter($loginInfo->getInputFilter());
             $form->setData($request->getPost());
 
             if ($form->isValid()) {
-                $nom->exchangeArray($form->getData());
-                //$this->getAlbumTable()->saveUtilisateur($nom);
-
-                // Redirect to list of home
-                return $this->redirect()->toRoute('home');
-
-
+                $loginInfo->exchangeArray($form->getData());
+                
+                $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+                $user = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(
+                        array('email' => $loginInfo->email, 'password' => sha1($loginInfo->password)));
+                
+                if (!empty($user)) {
+                    $session->offsetSet('id', $user->getId());
+                    $session->offsetSet('email', $user->getEmail());
+                    $session->offsetSet('type', $user->getType());
+                }
             }
-            //return array('form' => $form);
-
         }
-        return new ViewModel( array('form' => $form));
+        return new ViewModel(array('form' => $form, 'session' => $session));
     }
 
     public function loginAction()
     {
-        $email = Requests::vars('post', 'email', 'email', true);
-        $password = Requests::vars('post', 'string', 'password', false);
-
-        $user = null;
-        $session = new Container('user');
-
-        if(!empty($email) and !empty($password)) {
-
-            $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-            $user = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(
-                    array('email' => $email, 'password' => sha1($password)));
-
-            if (!empty($user)) {
-
-                $session->offsetSet('id', $user->getId());
-                $session->offsetSet('email', $user->getEmail());
-                $session->offsetSet('type', $user->getType());
-            }
-        }
-        return new ViewModel(array('user' => $user, 'session' => $session));
+        return $this->redirect()->toRoute('login');
     }
 
     public function logoutAction()
