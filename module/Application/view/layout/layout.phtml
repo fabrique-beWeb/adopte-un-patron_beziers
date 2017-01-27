@@ -29,7 +29,7 @@
 
 <body>
 	<header>
-		<nav class="navbar navbar-inverse navbarmain">
+		<nav class="navbar navbar-inverse navbar-fixed-top navbarmain">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">
 					<li><a href="/"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> AdopteUnPatron</a></li>
@@ -44,9 +44,9 @@
 				-->
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active">
-						<li><a href="#">Nos Offres</a></li>
-						<li><a href="#">Comment ça marche ?</a></li>
-						<li><a href="#">Evènements</a></li>
+						<li><a href="/404">Nos Offres</a></li>
+						<li><a href="#comment_ca_marche">Comment ça marche ?</a></li>
+						<li><a href="#evenements">Evènements</a></li>
 						<li><a href="/utilisateur/login/index">Connexion</a></li>
 						<li><a href="/utilisateur/register/index">Inscription</a></li>
 				</ul>
@@ -55,11 +55,23 @@
 	</header>
 
 	<main>
+		<br><br><br><br><br><br>
 		<?php echo $this->content; ?>
         <br><br><br>
 	</main>
     
 	<footer>
+		<a href="#">Aide</a> -
+		<a href="#">C.G.U</a> -
+		<a href="#">Mentions légales</a> -
+		<a href="#">Nous contacter</a>
+		<div class="socials">
+			<i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+			<i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+			<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+			<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+			<i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+		</div>
 		<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Adopte ta mère &copy; 2017
 	</footer>
 	<?php echo $this->inlineScript() ?>

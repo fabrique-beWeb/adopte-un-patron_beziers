@@ -34,7 +34,7 @@ h2 {
 footer {
 	margin-top: 2em;
 	text-align: center;
-	height: 4em;
+	min-height: 200px;
 	line-height: 4em;
 	background-color: #222;
 	color: #778899;
@@ -81,4 +81,11 @@ header .navbar {
 	margin-right:1.2em;
 }
 
+.event-img {
+	width: 100%;
+	height: calc(100% - 1em);
+}
 
+.socials i {
+	margin: 0 0.25em;
+}
