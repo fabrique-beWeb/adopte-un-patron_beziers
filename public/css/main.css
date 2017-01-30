@@ -68,7 +68,7 @@ header .navbar {
 
 .emodamur img {
 	width: 4em;
-	
+
 }
 
 .annonce {
@@ -88,4 +88,9 @@ header .navbar {
 
 .socials i {
 	margin: 0 0.25em;
+}
+
+.profileIMG {
+	max-width: 128px;
+	max-height: 160px;
 }
