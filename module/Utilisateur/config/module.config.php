@@ -88,7 +88,7 @@ return array(
             'Utilisateur\Controller\Login' => 'Utilisateur\Controller\LoginController',
             'Utilisateur\Controller\Register' => 'Utilisateur\Controller\RegisterController',
             'Utilisateur\Controller\Profile' => 'Utilisateur\Controller\ProfileController',
-            'Utilisateur\Controller\EditUser' => 'Utilisateur\Controller\EditUserController',
+            'Utilisateur\Controller\PublicProfile' => 'Utilisateur\Controller\PublicProfileController',
         ),
     ),
     'view_manager' => array(
@@ -109,7 +109,8 @@ return array(
 
             'utilisateur/profile/index' => __DIR__ . '/../view/utilisateur/profile/index.phtml',
 
-            'utilisateur/edituser/index' => __DIR__ . '/../view/utilisateur/edituser/index.phtml',
+            'utilisateur/publicprofile/index' => __DIR__ . '/../view/utilisateur/publicprofile/index.phtml',
+
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
