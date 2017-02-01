@@ -15,7 +15,11 @@ use Zend\View\Model\ViewModel;
 use Zend\Form\Factory;
 use Utilisateur\Quantum\Requests;
 use Zend\Session\Container;
-use Utilisateur\Model\Login;
+use Utilisateur\Model\Edit;
+use Utilisateur\Form\EditProfileForm;
+
+use Utilisateur\Model\Description;
+use Utilisateur\Form\DescriptionForm;
 
 
 class ProfileController extends AbstractActionController
@@ -40,26 +44,89 @@ class ProfileController extends AbstractActionController
 
     public function editAction()
     {
-
-
-        // if ($request->isPost()) {
-        //     $loginInfo = new Login();
-        //     $form->setInputFilter($loginInfo->getInputFilter());
-        //     $form->setData($request->getPost());
-
         $session = new Container('user');
-        $userID = null;
-
+        $user = null;
+				$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
         if ($session->offsetExists('id') and !empty($session->offsetGet('id'))) {
-            // recupération des info sur la BDD
-            $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-            $userID = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(
-                                        array('id' => $session->offsetGet('id')));
-        }
+								// recupération des info sur la BDD
+								$user = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(array('id' => $session->offsetGet('id')));
+				}
+
+				$form = new EditProfileForm();
+			$form->get('nom')->setValue($user->getNom());
+			$form->get('prenom')->setValue($user->getPrenom());
+			$form->get('telephone')->setValue($user->getTelephone());
+			$form->get('adresse')->setValue($user->getAdresse());
+			$form->get('code_postal')->setValue($user->getCodePostal());
+			
+			$jour = intval(date('d', $user->getDateNaissance()));
+			$form->get('date_naissance')->setValue($jour-1);
+			
+			$mois = intval(date('n', $user->getDateNaissance()));
+			$form->get('date_naissance2')->setValue($mois);
+			
+			$annee = intval(date('o', $user->getDateNaissance()));
+			$form->get('date_naissance3')->setValue($annee);
+			
+			$formDescription = new DescriptionForm();	
+			$formDescription->get('description')->setValue($user->getAccroche());
+
+				$annee = intval(date("o", time()));
+			  $options = array();
+			
+			  for ($i=$annee; $i>($annee-100);$i--) {
+					$options[$i] = $i;
+				}
+			
+			  $form->get('date_naissance3')->setValueOptions($options);
+			  
+        $session = new Container('user');
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $profileInfo = new Edit();
+            $form->setInputFilter($profileInfo->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+							
+                $profileInfo->exchangeArray($form->getData());
+									$user->setNom($profileInfo->nom);
+									$user->setPrenom($profileInfo->prenom);
+									
+									$dn = strtotime($profileInfo->dateNaissance+1 . '-' . 
+																	$profileInfo->dateNaissance2 . '-' .
+																  $profileInfo->dateNaissance3);
+									$user->setDateNaissance($dn);
+
+									$user->setTelephone($profileInfo->telephone);
+
+									$user->setAdresse($profileInfo->adresse);
+									$user->setCodePostal($profileInfo->codePostal);
 
 
-        return new ViewModel(array('user' => $userID));
+
+									$em->persist($user);
+									$em->flush();
+							 
+            }
+					
+						$desc = new Description();
+            $formDescription->setInputFilter($desc->getInputFilter());
+            $formDescription->setData($request->getPost());
+
+            if ($formDescription->isValid()) {
+							
+                $desc->exchangeArray($formDescription->getData());
+									$user->setAccroche($desc->description);
+
+									$em->persist($user);
+									$em->flush();		 
+            }
+
+				}
+			
+			
+        return new ViewModel(array('user' => $user, "form" => $form, 'formDescription' => $formDescription));
     }
-
 
 }
