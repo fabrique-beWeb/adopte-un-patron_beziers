@@ -15,12 +15,12 @@ class EditProfileForm extends Form
             'type' => 'text',
             'options' => array(
                 'label' => 'Nom',
-                
+
             ),
             'attributes' => array(
                 'class' => 'form-control',
 								'placeholder' => 'Nom'
-                
+
             ),
         ));
 
@@ -35,7 +35,7 @@ class EditProfileForm extends Form
 								'placeholder' => 'Prénom'
             ),
         ));
-			
+
 				$this->add(array(
             'name' => 'date_naissance',
             'type' => 'select',
@@ -45,11 +45,11 @@ class EditProfileForm extends Form
             ),
             'attributes' => array(
          //       'class' => 'form-control',
-							
-								
+
+
             ),
         ));
-			
+
 							$this->add(array(
             'name' => 'date_naissance2',
             'type' => 'select',
@@ -59,11 +59,11 @@ class EditProfileForm extends Form
             ),
             'attributes' => array(
             //    'class' => 'form-control',
-								
-								
+
+
             ),
         ));
-			
+
 										$this->add(array(
             'name' => 'date_naissance3',
             'type' => 'select',
@@ -71,11 +71,11 @@ class EditProfileForm extends Form
                 'label' => 'Date de naissance',
             ),
             'attributes' => array(
-								
-								
+
+
             ),
         ));
-			
+
 				$this->add(array(
             'name' => 'telephone',
             'type' => 'text',
@@ -87,7 +87,7 @@ class EditProfileForm extends Form
 								'placeholder' => 'Téléphone'
             ),
         ));
-			
+
 				$this->add(array(
             'name' => 'adresse',
             'type' => 'text',
@@ -99,7 +99,7 @@ class EditProfileForm extends Form
 								'placeholder' => 'Adresse'
             ),
         ));
-			
+
 				$this->add(array(
             'name' => 'code_postal',
             'type' => 'text',

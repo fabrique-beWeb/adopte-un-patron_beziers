@@ -20,14 +20,16 @@ class IndexController extends AbstractActionController
     {
         $session = new Container('base');
         $email = '';
-        
+
         $session->offsetSet('email', 'corin.alex@gmail.com');
-        
+
         if ($session->offsetExists('email')) {
             $email = $session->offsetGet('email');
         }
         //return $this->redirect()->toRoute('login');
 
         return new ViewModel(array('email' => $email));
+
     }
+
 }
