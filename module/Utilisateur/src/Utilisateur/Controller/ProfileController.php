@@ -124,16 +124,16 @@ class ProfileController extends AbstractActionController
 		}
 
         // dernier ajout
-        $contrat = $em->getRepository('Utilisateur\Entity\Users')->findOneBy
-
-        $formSkill = new SkillForm();
-        $skills = $em->getRepository('Utilisateur\Entity\TypeDeContrat')->findAll(),(array('Contrat' => $contrat->offsetGet('type_de_contrat')));;
-
-
-        $contrat = array();
-        //foreach
-
-        $form->get('type_de_contrat')->setValueOptions($contrat);
+        // $contrat = $em->getRepository('Utilisateur\Entity\Users')->findOneBy
+        //
+        // $formSkill = new SkillForm();
+        // $skills = $em->getRepository('Utilisateur\Entity\TypeDeContrat')->findAll(),(array('Contrat' => $contrat->offsetGet('type_de_contrat')));;
+        //
+        //
+        // $contrat = array();
+        // //foreach
+        //
+        // $form->get('type_de_contrat')->setValueOptions($contrat);
         // <3
 
 
