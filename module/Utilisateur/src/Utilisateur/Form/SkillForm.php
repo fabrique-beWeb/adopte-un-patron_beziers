@@ -9,36 +9,73 @@ class SkillForm extends Form
     {
         parent::__construct('SkillForm');
         $this->setAttribute('method', 'post');
+			
+			
+					$this->add(array(
+            'name' => 'Type de  contrat',
+            'type' => 'select',
+            'options' => array(
+                'label' => 'contrat',
+								'options' => array('cdi','cdd'),
+            ),
+            'attributes' => array(
+         //   'class' => 'form-control',
+
+
+            ),
+        ));
+			
+								$this->add(array(
+            'name' => 'Poste',
+            'type' => 'select',
+            'options' => array(
+                'label' => 'poste',
+								'options' => array(),
+            ),
+            'attributes' => array(
+         //   'class' => 'form-control',
+            ),
+        ));
+			
+											$this->add(array(
+            'name' => 'Lieux',
+            'type' => 'select',
+            'options' => array(
+                'label' => 'Lieux',
+								'options' => array(),
+            ),
+            'attributes' => array(
+         //   'class' => 'form-control',
+            ),
+        ));
+			
 
         $this->add(array(
-      'name' => 'poste',
-      'type' => 'textarea',
-
       'options' => array(
           'label' => 'Intitulé Poste',
-
-      ),
+      ),			
+			'name' => 'poste',
+      'type' => 'textarea',     
       'attributes' => array(
           'class' => 'form-control',
                           'placeholder' => 'Intitulé du Poste'
-
       ),
   ));
 
-  $this->add(array(
-'name' => 'contrat',
-'type' => 'select',
-
-'options' => array(
-    'label' => 'Intitulé Poste: Ta maman la catin',
-
-),
-'attributes' => array(
-    'class' => 'form-control',
-
-
-),
-));
+//  $this->add(array(
+//'name' => 'skill',
+//'type' => 'textarea',
+//
+//'options' => array(
+//    'label' => 'Compétences: ',
+//
+//),
+//'attributes' => array(
+//    'class' => 'form-control',
+//		
+//
+//),
+//));
 
 
         $this->add(array(

@@ -70,7 +70,17 @@ class ProfileController extends AbstractActionController
 
 		$annee = intval(date('o', $user->getDateNaissance()));
 		$form->get('date_naissance3')->setValue($annee);
-
+			
+		
+		$types = $em->getRepository('Utilisateur\Entity\TypeDeContrat')->findAll();
+			$tlist = array();
+			foreach ($types as $t) {
+			$tlist[$t->getType()] = $t->getId();
+		 }
+		$form->get('type_de_contrat')->setValueOptions($tlist);	
+			
+		
+			
 		$formDescription = new DescriptionForm();
 		$formDescription->get('description')->setValue($user->getAccroche());
 

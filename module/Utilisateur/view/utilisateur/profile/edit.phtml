@@ -124,6 +124,7 @@
 					<?php echo $this->form()->closeTag($formDescription); ?>
 				</div>
 			</div>
+			
 			<?php if ($user->getType() == 0)  { ?>
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -131,12 +132,12 @@
 				</div>
 				<div class="panel-body">
 					<form>
+<?php echo $this->formLabel($form->get('type_de_contrat')); ?>
+<?php echo $this->formElement($form->get('type_de_contrat')); ?>		
+						
 
 						<select>
-							<option>Type de contrat</option>
-						</select>
-
-						<select>
+							<?php echo $this->formLabel($form->get('poste')); ?>
 							<option>Poste</option>
 						</select>
 
@@ -159,37 +160,21 @@
 						<div class="skills">
 
 
-					<!-- 		<input type="checkbox">
-							<label>Html</label>
-							<input type="checkbox">
-							<label>Php</label>
-							<input type="checkbox">
-							<label>Java</label>
-							<input type="checkbox">
-							<label>Php</label>
-							<br>
-
-							<input type="checkbox">
-							<label>Ruby</label>
-							<input type="checkbox">
-							<label>C</label>
-							<input type="checkbox">
-							<label>C#</label>
-							<input type="checkbox">
-							<label>C++</label>
-							<br>
-							<input type="checkbox">
-							<label>Python</label>
-							<input type="checkbox">
-							<label>Javascript</label>
-							<input type="checkbox">
-							<label>Illustrator</label>
-							<input type="checkbox">
-							<label>Photoshop</label>-->
-
-						<!-- </div>
+					 </div>
+													<?php
+		$skillCount = 0;
+		foreach ($formSkill as $element) {
+			if ($skillCount >= 6) {
+				echo '<br>';
+				$skillCount = 0;
+			}
+			if ($element->getAttribute('type') != 'checkbox') continue;
+			echo $this->formElement($element) . ' ' . $this->formLabel($element);
+			$skillCount++;
+		} ?>
 						<div class="right">
 							<br>
+
 							<button type="submit" class="btn btn-primary">Valider</button>
 						</div>
 					</form>
@@ -198,14 +183,15 @@
 <?php } elseif($user->getType() == 1) { ?>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Creer votre annonce</h3>
+					<h3 class="panel-title">Créer votre annonce</h3>
 				</div>
 				<div class="panel-body">
 					<form>
-						<input class="form-control" type="text" placeholder="Intitulé du poste">
+<!--						<input class="form-control" type="text" placeholder="Intitulé du poste">-->
 						<br>
 
 
+<!--
 						<select>
 							<option>Type de contrat</option>
 						</select>
@@ -217,6 +203,8 @@
 						<select>
 							<option>Lieux</option>
 						</select>
+-->
+						
 						&nbsp;&nbsp;
 						<label>Salaire minimum</label>&nbsp;&nbsp;
 						<input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="800" data-slider-max="6000" data-slider-step="100" data-slider-value="2200">
@@ -230,11 +218,12 @@
 
 						<br>
 						<br>
-						<div class="skills well">
-							<strong>Compétences</strong>
+						
+
 							<br>
 							<br>
-							<!-- <input type="checkbox">
+<!--
+							 <input type="checkbox">
 							<label>Html</label>
 							<input type="checkbox">
 							<label>Php</label>
@@ -242,7 +231,10 @@
 							<label>Java</label>
 							<input type="checkbox">
 							<label>Php</label>
-							<br> -->
+-->
+							<br> 
+						<div class="skills well">
+							
 		<?php
 		$skillCount = 0;
 		foreach ($formSkill as $element) {
@@ -250,11 +242,11 @@
 				echo '<br>';
 				$skillCount = 0;
 			}
-			if ($element->getAttribute('type') == 'submit') continue;
+			if ($element->getAttribute('type') != 'checkbox') continue;
 			echo $this->formElement($element) . ' ' . $this->formLabel($element);
 			$skillCount++;
 		} ?>
-
+						
 						</div>
 
 						<strong>Détails du poste</strong>

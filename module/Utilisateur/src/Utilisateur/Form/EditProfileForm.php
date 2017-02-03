@@ -113,6 +113,30 @@ class EditProfileForm extends Form
         ));
 
 
+			  $this->add(array(
+            'name' => 'type_de_contrat',
+            'type' => 'select',
+            'options' => array(
+                'label' => 'Type de contrat',
+            ),
+            'attributes' => array(
+
+
+            ),
+        ));
+			
+			  $this->add(array(
+            'name' => 'poste',
+            'type' => 'select',
+            'options' => array(
+                'label' => 'Poste',
+            ),
+            'attributes' => array(
+
+
+            ),
+        ));
+			
         $this->add(array(
             'name' => 'submit',
             'type' => 'Submit',
