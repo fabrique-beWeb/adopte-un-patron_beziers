@@ -1,0 +1,40 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BeziersPagesAup
+ *
+ * @ORM\Table(name="beziers_pages_aup")
+ * @ORM\Entity
+ */
+class BeziersPagesAup
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", length=16777215, nullable=true)
+     */
+    private $content;
+
+
+}
+

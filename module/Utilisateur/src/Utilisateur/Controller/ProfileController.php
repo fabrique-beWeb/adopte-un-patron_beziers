@@ -36,7 +36,7 @@ class ProfileController extends AbstractActionController
         if ($session->offsetExists('id') and !empty($session->offsetGet('id'))) {
             // recupération des info sur la BDD
             $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-            $userID = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(
+            $userID = $em->getRepository('\Application\Entity\BeziersUsersAup')->findOneBy(
                                         array('id' => $session->offsetGet('id')));
         }
 
@@ -52,7 +52,7 @@ class ProfileController extends AbstractActionController
 		$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
         if ($session->offsetExists('id') and !empty($session->offsetGet('id'))) {
             // recupération des info sur la BDD
-            $user = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(array('id' => $session->offsetGet('id')));
+            $user = $em->getRepository('\Application\Entity\BeziersUsersAup')->findOneBy(array('id' => $session->offsetGet('id')));
         }
 
 		$form = new EditProfileForm();
@@ -72,7 +72,7 @@ class ProfileController extends AbstractActionController
 		$form->get('date_naissance3')->setValue($annee);
 			
 		
-		$types = $em->getRepository('Utilisateur\Entity\TypeDeContrat')->findAll();
+		$types = $em->getRepository('\Application\Entity\BeziersTypeDeContratAup')->findAll();
 			$tlist = array();
 			foreach ($types as $t) {
 			$tlist[$t->getType()] = $t->getId();
@@ -149,7 +149,7 @@ class ProfileController extends AbstractActionController
 
 
         $formSkill = new SkillForm();
-        $skills = $em->getRepository('Utilisateur\Entity\Skills')->findAll();
+        $skills = $em->getRepository('\Application\Entity\BeziersSkillsAup')->findAll();
 
         foreach ($skills as $skill) {
             $checkbox = new Element\Checkbox($skill->getName());

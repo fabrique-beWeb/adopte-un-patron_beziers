@@ -46,7 +46,7 @@ class RegisterController extends AbstractActionController
                 $message = "Veuillez remplir tous les champs obligatoires";
             }
             else {
-                $user = new \Utilisateur\Entity\Users();
+                $user = new \Application\Entity\BeziersUsersAup();
                 $user->setNom($nom);
                 $user->setPrenom($prenom);
                 

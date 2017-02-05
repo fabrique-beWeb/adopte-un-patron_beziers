@@ -35,7 +35,7 @@ class LoginController extends AbstractActionController
                 $loginInfo->exchangeArray($form->getData());
                 
                 $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-                $user = $em->getRepository('Utilisateur\Entity\Users')->findOneBy(
+                $user = $em->getRepository('\Application\Entity\BeziersUsersAup')->findOneBy(
                         array('email' => $loginInfo->email, 'password' => sha1($loginInfo->password)));
                 
                 if (!empty($user)) {
