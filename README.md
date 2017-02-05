@@ -7,13 +7,19 @@
 
 ## Technologies
 * Zend Framework 2
-* Twig ? (A voir)
 * Bootstrap / Bootflat
 * Glyphicons
+* FontAwesome
 * jQuery 3
 * Sass
 
 ## Changelog
+* **05/02/2017**
+    * Mise en place du profil utilisateur
+	* Formulaire modification profil
+	* MAJ des noms des tables de la BDD
+	* Debut de formulaire ajout annonce
+	
 * **25/01/2016**
     * Mise en place de doctrine
     * Création des entités
