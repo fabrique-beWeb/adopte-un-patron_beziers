@@ -29,9 +29,9 @@ class BeziersCandidatureAup
     private $etat;
 
     /**
-     * @var \Application\\Entity\\BeziersUsersAup
+     * @var \Application\Entity\BeziersUsersAup
      *
-     * @ORM\ManyToOne(targetEntity="Application\\Entity\\BeziersUsersAup")
+     * @ORM\ManyToOne(targetEntity="Application\Entity\BeziersUsersAup")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="candidat", referencedColumnName="id")
      * })
@@ -39,9 +39,9 @@ class BeziersCandidatureAup
     private $candidat;
 
     /**
-     * @var \Application\\Entity\\BeziersAnnoncesAup
+     * @var \Application\Entity\BeziersAnnoncesAup
      *
-     * @ORM\ManyToOne(targetEntity="Application\\Entity\\BeziersAnnoncesAup")
+     * @ORM\ManyToOne(targetEntity="Application\Entity\BeziersAnnoncesAup")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="annonces", referencedColumnName="id")
      * })
@@ -87,11 +87,11 @@ class BeziersCandidatureAup
     /**
      * Set candidat
      *
-     * @param \Application\\Entity\\BeziersUsersAup $candidat
+     * @param \Application\Entity\BeziersUsersAup $candidat
      *
      * @return BeziersCandidatureAup
      */
-    public function setCandidat(\Application\\Entity\\BeziersUsersAup $candidat = null)
+    public function setCandidat(\Application\Entity\BeziersUsersAup $candidat = null)
     {
         $this->candidat = $candidat;
 
@@ -101,7 +101,7 @@ class BeziersCandidatureAup
     /**
      * Get candidat
      *
-     * @return \Application\\Entity\\BeziersUsersAup
+     * @return \Application\Entity\BeziersUsersAup
      */
     public function getCandidat()
     {
@@ -111,11 +111,11 @@ class BeziersCandidatureAup
     /**
      * Set annonces
      *
-     * @param \Application\\Entity\\BeziersAnnoncesAup $annonces
+     * @param \Application\Entity\BeziersAnnoncesAup $annonces
      *
      * @return BeziersCandidatureAup
      */
-    public function setAnnonces(\Application\\Entity\\BeziersAnnoncesAup $annonces = null)
+    public function setAnnonces(\Application\Entity\BeziersAnnoncesAup $annonces = null)
     {
         $this->annonces = $annonces;
 
@@ -125,7 +125,7 @@ class BeziersCandidatureAup
     /**
      * Get annonces
      *
-     * @return \Application\\Entity\\BeziersAnnoncesAup
+     * @return \Application\Entity\BeziersAnnoncesAup
      */
     public function getAnnonces()
     {

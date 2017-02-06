@@ -57,9 +57,9 @@ class BeziersEntrepriseAup
     private $recruteurs;
 
     /**
-     * @var \Application\\Entity\\BeziersStatutJuridiqueAup
+     * @var \Application\Entity\BeziersStatutJuridiqueAup
      *
-     * @ORM\ManyToOne(targetEntity="Application\\Entity\\BeziersStatutJuridiqueAup")
+     * @ORM\ManyToOne(targetEntity="Application\Entity\BeziersStatutJuridiqueAup")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="statut", referencedColumnName="id")
      * })
@@ -201,11 +201,11 @@ class BeziersEntrepriseAup
     /**
      * Set statut
      *
-     * @param \Application\\Entity\\BeziersStatutJuridiqueAup $statut
+     * @param \Application\Entity\BeziersStatutJuridiqueAup $statut
      *
      * @return BeziersEntrepriseAup
      */
-    public function setStatut(\Application\\Entity\\BeziersStatutJuridiqueAup $statut = null)
+    public function setStatut(\Application\Entity\BeziersStatutJuridiqueAup $statut = null)
     {
         $this->statut = $statut;
 
@@ -215,7 +215,7 @@ class BeziersEntrepriseAup
     /**
      * Get statut
      *
-     * @return \Application\\Entity\\BeziersStatutJuridiqueAup
+     * @return \Application\Entity\BeziersStatutJuridiqueAup
      */
     public function getStatut()
     {

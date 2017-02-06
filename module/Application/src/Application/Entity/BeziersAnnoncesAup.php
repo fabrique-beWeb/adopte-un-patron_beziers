@@ -78,9 +78,9 @@ class BeziersAnnoncesAup
     private $grade;
 
     /**
-     * @var \Application\\Entity\\BeziersTypeDeContratAup
+     * @var \Application\Entity\BeziersTypeDeContratAup
      *
-     * @ORM\ManyToOne(targetEntity="Application\\Entity\\BeziersTypeDeContratAup")
+     * @ORM\ManyToOne(targetEntity="Application\Entity\BeziersTypeDeContratAup")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="contrat", referencedColumnName="id")
      * })
@@ -294,11 +294,11 @@ class BeziersAnnoncesAup
     /**
      * Set contrat
      *
-     * @param \Application\\Entity\\BeziersTypeDeContratAup $contrat
+     * @param \Application\Entity\BeziersTypeDeContratAup $contrat
      *
      * @return BeziersAnnoncesAup
      */
-    public function setContrat(\Application\\Entity\\BeziersTypeDeContratAup $contrat = null)
+    public function setContrat(\Application\Entity\BeziersTypeDeContratAup $contrat = null)
     {
         $this->contrat = $contrat;
 
@@ -308,7 +308,7 @@ class BeziersAnnoncesAup
     /**
      * Get contrat
      *
-     * @return \Application\\Entity\\BeziersTypeDeContratAup
+     * @return \Application\Entity\BeziersTypeDeContratAup
      */
     public function getContrat()
     {
